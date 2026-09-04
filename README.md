@@ -13,11 +13,11 @@ real enterprise hardware rather than a simulator.
 
 ## Projects
 
-| | Live | Repository | Summary |
-|---|---|---|---|
-| **Cherwood Health** | [cherwood.tarunc.com](https://cherwood.tarunc.com) | [cherwood-health](https://github.com/taruncherukurigit/cherwood-health) | Segmented enterprise network on real FortiGate and Cisco hardware — VLANs, firewall policy, SSL-VPN, RIPv2 branch routing, Prometheus/Grafana monitoring, automated config drift detection. 21/21 build parts complete. |
-| **Cherwood Network Solutions** | [networksolutions.tarunc.com](https://networksolutions.tarunc.com) | [network-automation-toolkit](https://github.com/taruncherukurigit/network-automation-toolkit) | Unattended Python/Netmiko automation that backs up, version-controls, and drift-checks configuration across Cherwood Health's core devices nightly — includes root-causing a 12-year-old open-source Paramiko/Cisco IOS SSH compatibility bug. |
-| **Packetgeist** | [packetgeist.tarunc.com](https://packetgeist.tarunc.com) | [plainsboro-library-survey](https://github.com/taruncherukurigit/plainsboro-library-survey) | Passive 802.11 site survey of a three-storey public library, conducted with permission — 67 measurement points, 1,523 network observations, 8 access points, 6 documented findings extracted directly from the survey database. |
+| | Live | Repository | Pages mirror | Summary |
+|---|---|---|---|---|
+| **Cherwood Health** | [cherwood.tarunc.com](https://cherwood.tarunc.com) | [cherwood-health](https://github.com/taruncherukurigit/cherwood-health) | [Pages mirror](https://taruncherukurigit.github.io/cherwood-health/) | Segmented enterprise network on real FortiGate and Cisco hardware — VLANs, firewall policy, SSL-VPN, RIPv2 branch routing, Prometheus/Grafana monitoring, automated config drift detection. 21/21 build parts complete. |
+| **Cherwood Network Solutions** | [networksolutions.tarunc.com](https://networksolutions.tarunc.com) | [network-automation-toolkit](https://github.com/taruncherukurigit/network-automation-toolkit) | [Pages mirror](https://taruncherukurigit.github.io/network-automation-toolkit/) | Unattended Python/Netmiko automation that backs up, version-controls, and drift-checks configuration across Cherwood Health's core devices nightly — includes root-causing a 12-year-old open-source Paramiko/Cisco IOS SSH compatibility bug. |
+| **Packetgeist** | [packetgeist.tarunc.com](https://packetgeist.tarunc.com) | [plainsboro-library-survey](https://github.com/taruncherukurigit/plainsboro-library-survey) | [Pages mirror](https://taruncherukurigit.github.io/plainsboro-library-survey/) | Passive 802.11 site survey of a three-storey public library, conducted with permission — 67 measurement points, 1,523 network observations, 8 access points, 6 documented findings extracted directly from the survey database. |
 
 ## Structure
 
