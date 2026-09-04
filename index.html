@@ -149,10 +149,11 @@
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
       <a href="#cherwood">Cherwood Health</a>
+      <a href="#netsol">Network Solutions</a>
       <a href="#packetgeist">Packetgeist</a>
       <a href="#certs">Certifications</a>
       <a href="https://github.com/taruncherukurigit" target="_blank">GitHub &#8599;</a>
-      <a href="mailto:taruncheru@gmail.com" class="nav-cta">Contact</a>
+      <a href="/cdn-cgi/l/email-protection#374356454259545f52454277505a565e5b1954585a" class="nav-cta">Contact</a>
     </div>
   </div>
 </nav>
@@ -170,7 +171,7 @@
     </div>
     <div class="hero-actions">
       <a href="#cherwood" class="btn btn-primary">View my hands-on lab project &#8594;</a>
-      <a href="mailto:taruncheru@gmail.com" class="btn btn-ghost">taruncheru@gmail.com</a>
+      <a href="/cdn-cgi/l/email-protection#d5a1b4a7a0bbb6bdb0a7a095b2b8b4bcb9fbb6bab8" class="btn btn-ghost"><span class="__cf_email__" data-cfemail="86f2e7f4f3e8e5eee3f4f3c6e1ebe7efeaa8e5e9eb">[email&#160;protected]</span></a>
       <a href="tel:+12408864476" class="btn btn-ghost">(240) 886-4476</a>
       <a href="https://www.linkedin.com/in/dsstaruncherukuri" target="_blank" class="btn btn-ghost">LinkedIn &#8599;</a>
       <a href="https://github.com/taruncherukurigit" target="_blank" class="btn btn-ghost">GitHub &#8599;</a>
@@ -316,7 +317,7 @@
     <div class="section-head">
       <span class="eyebrow-plain">Selected work</span>
       <h2>Projects</h2>
-      <p>Two flagship builds below, both on real hardware end to end. Additional applied work
+      <p>Three flagship builds below, all on real hardware end to end. Additional applied work
       and what's next follow after.</p>
     </div>
   </div>
@@ -373,6 +374,50 @@
         <a href="https://cherwood.tarunc.com" target="_blank" class="btn btn-primary">Live project site &#8594;</a>
         <a href="https://github.com/taruncherukurigit/cherwood-health" target="_blank" class="btn btn-ghost">Full GitHub repo</a>
         <a href="https://taruncherukurigit.github.io/cherwood-health/" target="_blank" class="btn btn-ghost">GitHub Pages mirror</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="netsol">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow-plain">Cherwood Corporation &middot; Division 03</span>
+      <h2>Cherwood Network Solutions</h2>
+      <p>The internal MSP division of Cherwood Corporation &mdash; building and operating the automation that manages, backs up, and secures every other Cherwood property, starting with Cherwood Health. Full writeup, code, and the real troubleshooting story in the <a href="https://github.com/taruncherukurigit/network-automation-toolkit" target="_blank">GitHub repo</a>.</p>
+    </div>
+
+    <div class="featured">
+      <div class="tag-row">
+        <span class="mini-tag">Python + Netmiko</span>
+        <span class="mini-tag">Git version control</span>
+        <span class="mini-tag">Drift detection</span>
+        <span class="mini-tag">Flask dashboard</span>
+        <span class="mini-tag">cron</span>
+      </div>
+      <h3>Root-caused a 12-year-old, still-open Paramiko/Cisco IOS bug</h3>
+      <p>An unattended nightly system that backs up, version-controls, and drift-checks configuration across three production devices &mdash; zero manual steps, built the way a real MSP scopes access into a client's environment.</p>
+
+      <div class="inv-cat">What it manages</div>
+      <table class="inv-table">
+        <tr><th>Device</th><th>Role</th></tr>
+        <tr><td><code>FortiGate 60E</code></td><td>Perimeter firewall &mdash; config pulled and normalized nightly</td></tr>
+        <tr><td><code>Cisco Catalyst 3560E</code></td><td>Core switch &mdash; config pulled nightly</td></tr>
+        <tr><td><code>Cisco 1921 ISR</code></td><td>Branch router &mdash; config pulled nightly</td></tr>
+      </table>
+
+      <div class="inv-cat">The real engineering story</div>
+      <table class="inv-table">
+        <tr><th>Bug</th><th>Root cause</th></tr>
+        <tr><td>Netmiko/Cisco IOS SSH failure</td><td>Legacy IOS SSH servers don't follow RFC 4252's public-key handshake correctly &mdash; traced via debug-level Paramiko logs and a decade of open GitHub issues, fixed with a targeted compatibility patch rather than a workaround</td></tr>
+        <tr><td>False drift alerts, every run</td><td>FortiGate re-encrypts password/key fields with a random salt on every pull &mdash; fixed with a normalization pass applied only to the drift-comparison copy</td></tr>
+        <tr><td>Site silently served the wrong content</td><td>Reverse proxy connected over IPv6 loopback (::1) while the new nginx site only listened on IPv4 &mdash; traced by systematically ruling out DNS, Cloudflare cache, and tunnel config before finding the missing <code>listen [::]:80;</code> line</td></tr>
+      </table>
+
+      <div class="hero-actions" style="margin-top:24px; margin-bottom: 0;">
+        <a href="https://networksolutions.tarunc.com" target="_blank" class="btn btn-primary">Live project site &#8594;</a>
+        <a href="https://github.com/taruncherukurigit/network-automation-toolkit" target="_blank" class="btn btn-ghost">Full GitHub repo</a>
+        <a href="https://taruncherukurigit.github.io/network-automation-toolkit/" target="_blank" class="btn btn-ghost">GitHub Pages mirror</a>
       </div>
     </div>
   </div>
@@ -450,8 +495,8 @@
       </div>
       <div class="proj-card upcoming">
         <span class="proj-status planned">Planned</span>
-        <h4>Network Automation Toolkit</h4>
-        <p>Python + Netmiko/NAPALM &mdash; multi-vendor config auditing and compliance checking.</p>
+        <h4>Automated Topology Discovery</h4>
+        <p>CDP/LLDP parsing with Graphviz/networkx &mdash; Cherwood Network Solutions, next in line.</p>
       </div>
       <div class="proj-card upcoming">
         <span class="proj-status planned">Planned</span>
@@ -468,7 +513,7 @@
       <h3>Let's talk.</h3>
       <p>Open to Network Engineer, Network Analyst, Network Architect, and Wireless Engineer roles.</p>
       <div class="contact-row">
-        <a href="mailto:taruncheru@gmail.com" class="btn btn-primary">taruncheru@gmail.com</a>
+        <a href="/cdn-cgi/l/email-protection#d8acb9aaadb6bbb0bdaaad98bfb5b9b1b4f6bbb7b5" class="btn btn-primary"><span class="__cf_email__" data-cfemail="4f3b2e3d3a212c272a3d3a0f28222e2623612c2022">[email&#160;protected]</span></a>
         <a href="tel:+12408864476" class="btn btn-ghost">(240) 886-4476</a>
         <a href="https://www.linkedin.com/in/dsstaruncherukuri" target="_blank" class="btn btn-ghost">LinkedIn &#8599;</a>
         <a href="https://github.com/taruncherukurigit" target="_blank" class="btn btn-ghost">GitHub &#8599;</a>
@@ -480,7 +525,7 @@
 <footer>
   <div class="wrap">
     Tarun Cherukuri &mdash; Network Engineering Portfolio. Flagship projects:
-    <a href="#cherwood">Cherwood Health</a> &amp; <a href="#packetgeist">Packetgeist</a>.
+    <a href="#cherwood">Cherwood Health</a>, <a href="#netsol">Network Solutions</a> &amp; <a href="#packetgeist">Packetgeist</a>.
     <br>
     <span style="font-size:11px;color:var(--text-faint)">
       Viewing on <a href="https://tarunc.com" style="color:var(--text-faint)">tarunc.com</a> &middot;
@@ -489,5 +534,6 @@
   </div>
 </footer>
 
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v3d52b47920f24c319d37e2661827c42b1787588026925" integrity="sha512-d9sL6GJLXn6fInD1+TVXhTcQOsmxeHfmHAvwGDIxp5TO+uo1fiWW7mHomMj4MLRlCsJDTqXzWLHJFFlPCEIj/A==" data-cf-beacon='{"version":"2024.11.0","token":"a310b82b82d74940a48b5e6c3f38a9b6","r":1}' crossorigin="anonymous"></script>
 </body>
 </html>
