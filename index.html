@@ -333,11 +333,12 @@
 
     <div class="featured">
       <div class="tag-row">
-        <span class="mini-tag">4 VLANs</span>
-        <span class="mini-tag">RIPv2 site-to-site</span>
-        <span class="mini-tag">SSL-VPN</span>
-        <span class="mini-tag">Prometheus + Grafana</span>
-        <span class="mini-tag">Bash automation</span>
+        <span class="mini-tag">Python + Netmiko</span>
+        <span class="mini-tag">Git version control</span>
+        <span class="mini-tag">Drift detection</span>
+        <span class="mini-tag">LLDP topology discovery</span>
+        <span class="mini-tag">Flask dashboard</span>
+        <span class="mini-tag">cron</span>
       </div>
       <h3>Full hardware &amp; software inventory</h3>
       <p>Every device, model number, and technology actually used in the build &mdash; not a simulated topology.</p>
@@ -412,10 +413,12 @@
         <tr><td>Netmiko/Cisco IOS SSH failure</td><td>Legacy IOS SSH servers don't follow RFC 4252's public-key handshake correctly &mdash; traced via debug-level Paramiko logs and a decade of open GitHub issues, fixed with a targeted compatibility patch rather than a workaround</td></tr>
         <tr><td>False drift alerts, every run</td><td>FortiGate re-encrypts password/key fields with a random salt on every pull &mdash; fixed with a normalization pass applied only to the drift-comparison copy</td></tr>
         <tr><td>Site silently served the wrong content</td><td>Reverse proxy connected over IPv6 loopback (::1) while the new nginx site only listened on IPv4 &mdash; traced by systematically ruling out DNS, Cloudflare cache, and tunnel config before finding the missing <code>listen [::]:80;</code> line</td></tr>
+        <tr><td>Same physical link counted as two edges</td><td>Cisco and FortiGate each reported the other's hostname differently (short name vs. full FQDN) &mdash; fixed by normalizing every reported name against the canonical device inventory before deduplicating</td></tr>
       </table>
 
       <div class="hero-actions" style="margin-top:24px; margin-bottom: 0;">
         <a href="https://networksolutions.tarunc.com" target="_blank" class="btn btn-primary">Live project site &#8594;</a>
+        <a href="https://netmap.tarunc.com" target="_blank" class="btn btn-ghost">Live topology map</a>
         <a href="https://github.com/taruncherukurigit/network-automation-toolkit" target="_blank" class="btn btn-ghost">Full GitHub repo</a>
         <a href="https://taruncherukurigit.github.io/network-automation-toolkit/" target="_blank" class="btn btn-ghost">GitHub Pages mirror</a>
       </div>
@@ -495,8 +498,8 @@
       </div>
       <div class="proj-card upcoming">
         <span class="proj-status planned">Planned</span>
-        <h4>Automated Topology Discovery</h4>
-        <p>CDP/LLDP parsing with Graphviz/networkx &mdash; Cherwood Network Solutions, next in line.</p>
+        <h4>HA/Failover Lab</h4>
+        <p>HSRP/VRRP + Spanning Tree across dual core switches &mdash; Cherwood Financial, next in line.</p>
       </div>
       <div class="proj-card upcoming">
         <span class="proj-status planned">Planned</span>
