@@ -151,6 +151,7 @@
       <a href="#cherwood">Cherwood Health</a>
       <a href="#netsol">Network Solutions</a>
       <a href="#packetgeist">Packetgeist</a>
+      <a href="#financial">Cherwood Financial</a>
       <a href="#certs">Certifications</a>
       <a href="https://github.com/taruncherukurigit" target="_blank">GitHub &#8599;</a>
       <a href="mailto:taruncheru@gmail.com" class="nav-cta">Contact</a>
@@ -426,6 +427,50 @@
   </div>
 </section>
 
+<section id="financial">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow-plain">Cherwood Corporation &middot; Division 05</span>
+      <h2>Cherwood Financial &mdash; HA/Failover Lab</h2>
+      <p>A real two-switch HSRP failover pair, proven against an actual power-pull rather than a config toggle &mdash; closing the one gap none of the other divisions cover: redundancy under real failure. Full writeup, code, and the real troubleshooting story in the <a href="https://github.com/taruncherukurigit/hsrp-failover-lab" target="_blank">GitHub repo</a>.</p>
+    </div>
+
+    <div class="featured">
+      <div class="tag-row">
+        <span class="mini-tag">HSRP</span>
+        <span class="mini-tag">Spanning Tree tuning</span>
+        <span class="mini-tag">Cisco Catalyst 3560E</span>
+        <span class="mini-tag">Live failure test</span>
+        <span class="mini-tag">Firewall policy scoping</span>
+      </div>
+      <h3>Measured a ~2 second failover against a real power-pull, not a spec sheet</h3>
+      <p>Two physical Cisco 3560E switches share one virtual gateway IP on a dedicated VLAN, with explicit priorities, tuned timers, and Spanning Tree deliberately aligned to the same switch HSRP favors. Proven by actually cutting power on the active switch mid-ping and measuring what happened.</p>
+
+      <div class="inv-cat">The setup</div>
+      <table class="inv-table">
+        <tr><th>Component</th><th>Role</th></tr>
+        <tr><td><code>Cherwood-3560E</code></td><td>Primary &mdash; priority 150, HSRP Active, STP root</td></tr>
+        <tr><td><code>Financial-SW2</code></td><td>Spare &mdash; priority 100, HSRP Standby, STP root secondary</td></tr>
+        <tr><td><code>10.10.70.1</code></td><td>Virtual IP &mdash; the actual gateway clients point to</td></tr>
+      </table>
+
+      <div class="inv-cat">The real engineering story</div>
+      <table class="inv-table">
+        <tr><th>Bug</th><th>Root cause</th></tr>
+        <tr><td>New switch unreachable from the automation container</td><td>A firewall policy permitting management access was scoped to a single host object, not the subnet &mdash; the new device's IP was never covered, so the connection silently timed out at the firewall</td></tr>
+        <tr><td>Spare switch rejected key-based SSH setup entirely</td><td>Same vendor and switch family as the primary, but an older IOS train that never implemented key-based auth for interactive sessions &mdash; confirmed via <code>ip ssh ?</code> showing no such command exists</td></tr>
+        <tr><td>New link showed a nonsense port label on the topology map</td><td>A 22-character hostname overflowed a fixed-width CLI column, causing the parser to misread the Hold-time value as a port name &mdash; silently wrong data, no error raised</td></tr>
+      </table>
+
+      <div class="hero-actions" style="margin-top:24px; margin-bottom: 0;">
+        <a href="https://failover.tarunc.com" target="_blank" class="btn btn-primary">Live project site &#8594;</a>
+        <a href="https://github.com/taruncherukurigit/hsrp-failover-lab" target="_blank" class="btn btn-ghost">Full GitHub repo</a>
+        <a href="https://taruncherukurigit.github.io/hsrp-failover-lab/" target="_blank" class="btn btn-ghost">GitHub Pages mirror</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="packetgeist">
   <div class="wrap">
     <div class="section-head">
@@ -498,11 +543,6 @@
       </div>
       <div class="proj-card upcoming">
         <span class="proj-status planned">Planned</span>
-        <h4>HA/Failover Lab</h4>
-        <p>HSRP/VRRP + Spanning Tree across dual core switches &mdash; Cherwood Financial, next in line.</p>
-      </div>
-      <div class="proj-card upcoming">
-        <span class="proj-status planned">Planned</span>
         <h4>IDS/IPS Lab</h4>
         <p>Suricata on a mirrored switch port &mdash; real detection and alert triage practice.</p>
       </div>
@@ -528,7 +568,8 @@
 <footer>
   <div class="wrap">
     Tarun Cherukuri &mdash; Network Engineering Portfolio. Flagship projects:
-    <a href="#cherwood">Cherwood Health</a>, <a href="#netsol">Network Solutions</a> &amp; <a href="#packetgeist">Packetgeist</a>.
+    <a href="#cherwood">Cherwood Health</a>, <a href="#netsol">Network Solutions</a>, <a href="#packetgeist">Packetgeist</a>, &amp;
+      <a href="#financial">Cherwood Financial</a>.
     <br>
     <span style="font-size:11px;color:var(--text-faint)">
       Viewing on <a href="https://tarunc.com" style="color:var(--text-faint)">tarunc.com</a> &middot;
