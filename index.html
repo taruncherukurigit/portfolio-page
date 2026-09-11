@@ -135,6 +135,7 @@
       <a href="#packetgeist">Packetgeist</a>
       <a href="#financial">Cherwood Financial</a>
       <a href="#foundation">Cherwood Foundation</a>
+      <a href="#legal">Cherwood Legal</a>
       <a href="#casebook">Packet Casebook</a>
       <a href="#certs">Certifications</a>
       <a href="https://github.com/taruncherukurigit" target="_blank">GitHub &#8599;</a>
@@ -469,6 +470,45 @@
     </div>
   </div>
 </section>
+<section id="legal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow-plain">Cherwood Corporation &middot; Division 04</span>
+      <h2>Cherwood Legal &mdash; SIEM-lite + IDS Lab</h2>
+      <p>A passive intrusion-detection lab on real hardware &mdash; a dedicated VLAN, a live Suricata sensor running a real 52,713-signature ruleset, and two independently verified detections: a malware-signature transfer and a live port scan, both surfaced through a lightweight custom dashboard. Full writeup, code, and the real troubleshooting story in the <a href="https://github.com/taruncherukurigit/suricata-siem-lite-lab" target="_blank">GitHub repo</a>.</p>
+    </div>
+    <div class="featured">
+      <div class="tag-row">
+        <span class="mini-tag">Suricata</span>
+        <span class="mini-tag">Emerging Threats Open</span>
+        <span class="mini-tag">Flask + SQLite</span>
+        <span class="mini-tag">VLAN segmentation</span>
+        <span class="mini-tag">Custom detection rules</span>
+      </div>
+      <h3>Proved live detection, not just segmentation &mdash; the one gap none of the other divisions cover</h3>
+      <p>A dedicated VLAN carries traffic through Proxmox's own VLAN-aware sub-bridge, watched directly by a Suricata sensor running the full Emerging Threats Open ruleset plus two custom rules. Proven against two real tests: a real malware-signature file transfer and a live port scan &mdash; both fired, both correctly attributed, both surfaced in a lightweight triage dashboard instead of raw log files.</p>
+      <div class="inv-cat">The setup</div>
+      <table class="inv-table">
+        <tr><th>Component</th><th>Role</th></tr>
+        <tr><td><code>VLAN50_Legal</code></td><td>10.10.50.0/24 &mdash; internet-only firewall policy, fully logged</td></tr>
+        <tr><td><code>vmbr0v50</code></td><td>Proxmox's VLAN-aware sub-bridge &mdash; the actual sensor capture point</td></tr>
+        <tr><td>Suricata 7.0.10</td><td>systemd service, 52,713 rules loaded, 0 failed</td></tr>
+      </table>
+      <div class="inv-cat">The real engineering story</div>
+      <table class="inv-table">
+        <tr><th>Bug</th><th>Root cause</th></tr>
+        <tr><td>RSPAN mirror caught broadcast traffic, never a real conversation</td><td>The switch mirrored VLAN 50 back out the same trunk port already carrying that traffic live &mdash; a documented Cisco loop-prevention behavior that silently drops mirrored unicast frames</td></tr>
+        <tr><td>A completed EICAR download the sensor still couldn't see</td><td>Every convenient EICAR mirror, including the one labeled official, transparently redirects to HTTPS &mdash; a passive sensor cannot inspect encrypted payloads by design</td></tr>
+        <tr><td>1,000-port scan completed with zero alerts fired</td><td>Emerging Threats Open ships no generic, low-threshold connection-rate rule tuned to a fast, small scan out of the box</td></tr>
+      </table>
+      <div class="hero-actions" style="margin-top:24px; margin-bottom: 0;">
+        <a href="https://legal.tarunc.com" target="_blank" class="btn btn-primary">Live project site &#8594;</a>
+        <a href="https://github.com/taruncherukurigit/suricata-siem-lite-lab" target="_blank" class="btn btn-ghost">Full GitHub repo</a>
+        <a href="https://taruncherukurigit.github.io/suricata-siem-lite-lab/" target="_blank" class="btn btn-ghost">GitHub Pages mirror</a>
+      </div>
+    </div>
+  </div>
+</section>
 <section id="casebook">
   <div class="wrap">
     <div class="section-head">
@@ -572,11 +612,6 @@
         <h4>AWS Cloud Foundations</h4>
         <p>Applied AWS core services (EC2, VPC, S3, IAM) through coursework tied to the Graduate Certificate in Cloud Engineering, covering cloud networking, security, and Linux-based virtualization.</p>
       </div>
-      <div class="proj-card upcoming">
-        <span class="proj-status planned">Planned</span>
-        <h4>IDS/IPS Lab</h4>
-        <p>Suricata on a mirrored switch port &mdash; real detection and alert triage practice.</p>
-      </div>
     </div>
   </div>
 </section>
@@ -598,7 +633,7 @@
   <div class="wrap">
     Tarun Cherukuri &mdash; Network Engineering Portfolio. Flagship projects:
     <a href="#cherwood">Cherwood Health</a>, <a href="#netsol">Network Solutions</a>, <a href="#packetgeist">Packetgeist</a>,
-      <a href="#financial">Cherwood Financial</a>, <a href="#foundation">Cherwood Foundation</a>, &amp;
+      <a href="#financial">Cherwood Financial</a>, <a href="#foundation">Cherwood Foundation</a>, <a href="#legal">Cherwood Legal</a>, &amp;
       <a href="#casebook">Packet Capture Casebook</a>.
     <br>
     <span style="font-size:11px;color:var(--text-faint)">
