@@ -355,7 +355,7 @@
     <div class="section-head">
       <span class="eyebrow-plain">Cherwood Corporation &middot; Division 03</span>
       <h2>Cherwood Network Solutions</h2>
-      <p>The internal MSP division of Cherwood Corporation &mdash; building and operating the automation that manages, backs up, and secures every other Cherwood property, starting with Cherwood Health. Full writeup, code, and the real troubleshooting story in the <a href="https://github.com/taruncherukurigit/network-automation-toolkit" target="_blank">GitHub repo</a>.</p>
+      <p>The internal MSP division of Cherwood Corporation &mdash; building and operating the automation that manages, backs up, and secures every other Cherwood property, starting with Cherwood Health. Now extended into the ITSM process layer with a real ServiceNow integration. Full writeup, code, and the real troubleshooting story in the <a href="https://github.com/taruncherukurigit/network-automation-toolkit" target="_blank">GitHub repo</a>.</p>
     </div>
     <div class="featured">
       <div class="tag-row">
@@ -365,9 +365,10 @@
         <span class="mini-tag">LLDP topology discovery</span>
         <span class="mini-tag">Flask dashboard</span>
         <span class="mini-tag">cron</span>
+        <span class="mini-tag">ServiceNow ITSM</span>
       </div>
       <h3>Root-caused a 12-year-old, still-open Paramiko/Cisco IOS bug</h3>
-      <p>An unattended nightly system that backs up, version-controls, drift-checks, and maps the topology of three production devices &mdash; zero manual steps, built the way a real MSP scopes access into a client's environment.</p>
+      <p>An unattended nightly system that backs up, version-controls, drift-checks, and maps the topology of three production devices &mdash; zero manual steps, built the way a real MSP scopes access into a client's environment. Real config drift now also opens a ServiceNow Incident automatically, with severity mapped from the diff content, and the same pipeline was verified against a full ServiceNow Change Request lifecycle &mdash; the process half of network operations, not just detection.</p>
       <div class="inv-cat">What it manages</div>
       <table class="inv-table">
         <tr><th>Device</th><th>Role</th></tr>
@@ -382,10 +383,12 @@
         <tr><td>False drift alerts, every run</td><td>FortiGate re-encrypts password/key fields with a random salt on every pull &mdash; fixed with a normalization pass applied only to the drift-comparison copy</td></tr>
         <tr><td>Site silently served the wrong content</td><td>Reverse proxy connected over IPv6 loopback (::1) while the new nginx site only listened on IPv4 &mdash; traced by systematically ruling out DNS, Cloudflare cache, and tunnel config before finding the missing <code>listen [::]:80;</code> line</td></tr>
         <tr><td>Same physical link counted as two edges</td><td>Cisco and FortiGate each reported the other's hostname differently (short name vs. full FQDN) &mdash; fixed by normalizing every reported name against the canonical device inventory before deduplicating</td></tr>
+        <tr><td>A form field that silently refused to change</td><td>ServiceNow's Normal Change model gates state transitions behind a real approval workflow and a required Assignment Group field, neither obvious from the form &mdash; fixed by working through genuine CAB-style approver records instead of fighting the state field</td></tr>
       </table>
       <div class="hero-actions" style="margin-top:24px; margin-bottom: 0;">
         <a href="https://networksolutions.tarunc.com" target="_blank" class="btn btn-primary">Live project site &#8594;</a>
         <a href="https://netmap.tarunc.com" target="_blank" class="btn btn-ghost">Live topology map</a>
+        <a href="https://github.com/taruncherukurigit/network-automation-toolkit/blob/main/docs/SERVICENOW-INTEGRATION.md" target="_blank" class="btn btn-ghost">ServiceNow integration writeup</a>
         <a href="https://github.com/taruncherukurigit/network-automation-toolkit" target="_blank" class="btn btn-ghost">Full GitHub repo</a>
         <a href="https://taruncherukurigit.github.io/network-automation-toolkit/" target="_blank" class="btn btn-ghost">GitHub Pages mirror</a>
       </div>
@@ -431,45 +434,6 @@
     </div>
   </div>
 </section>
-<section id="foundation">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow-plain">Cherwood Corporation &middot; Client Engagement, Delivered by Network Solutions</span>
-      <h2>Cherwood Foundation &mdash; AD / 802.1X / SSL-VPN</h2>
-      <p>Active Directory, 802.1X wireless authentication, and RADIUS-backed SSL-VPN for a nonprofit client &mdash; replacing a shared Wi-Fi password and unmanaged local VPN accounts with one verified identity. Full writeup, code, and the real troubleshooting story in the <a href="https://github.com/taruncherukurigit/activedirectory-cherwood" target="_blank">GitHub repo</a>.</p>
-    </div>
-    <div class="featured">
-      <div class="tag-row">
-        <span class="mini-tag">Active Directory</span>
-        <span class="mini-tag">802.1X</span>
-        <span class="mini-tag">NPS / RADIUS</span>
-        <span class="mini-tag">SSL-VPN</span>
-        <span class="mini-tag">Group Policy</span>
-      </div>
-      <h3>One credential, verified at every door &mdash; Wi-Fi, VPN, and the desktop itself</h3>
-      <p>A new Active Directory domain with AD-integrated DNS and a real OU structure, an Enterprise CA issuing the certificate 802.1X requires, and NPS acting as RADIUS between the directory and two entirely different client devices &mdash; a Cisco access point and a FortiGate firewall &mdash; each with its own policy. Proven end-to-end: valid and invalid logins tested on both Wi-Fi and VPN, with server-side log evidence for each, plus a domain-joined client and an enforced Group Policy.</p>
-      <div class="inv-cat">The setup</div>
-      <table class="inv-table">
-        <tr><th>Component</th><th>Role</th></tr>
-        <tr><td><code>foundation.cherwood.local</code></td><td>AD domain &mdash; DC at 10.10.60.20</td></tr>
-        <tr><td><code>FOUNDATION-CLIENT01</code></td><td>Domain-joined client &mdash; 10.10.60.21</td></tr>
-        <tr><td>NPS / RADIUS</td><td>Two independent Network Policies &mdash; one for Wi-Fi, one for VPN</td></tr>
-      </table>
-      <div class="inv-cat">The real engineering story</div>
-      <table class="inv-table">
-        <tr><th>Bug</th><th>Root cause</th></tr>
-        <tr><td>DNS role silently missing after promotion</td><td>AD DS promotion should auto-install DNS; it didn't, despite the AD-integrated zone data existing correctly &mdash; installed the role manually, verified via live queries</td></tr>
-        <tr><td>A correctly-scoped Wi-Fi policy silently rejected every VPN login</td><td>The Network Policy's "Wireless" condition meant NPS skipped it entirely for VPN's "Virtual" connection type, with no second policy to catch the fallthrough &mdash; fixed with an independent VPN-scoped policy</td></tr>
-        <tr><td>A failure with no log entry at all</td><td>Mismatched RADIUS shared secret between the firewall and NPS &mdash; fails completely silently by design, since the packet can't be authenticated well enough to log; confirmed via a direct RADIUS test bypassing the VPN portal</td></tr>
-      </table>
-      <div class="hero-actions" style="margin-top:24px; margin-bottom: 0;">
-        <a href="https://foundation.tarunc.com" target="_blank" class="btn btn-primary">Live project site &#8594;</a>
-        <a href="https://github.com/taruncherukurigit/activedirectory-cherwood" target="_blank" class="btn btn-ghost">Full GitHub repo</a>
-        <a href="https://taruncherukurigit.github.io/activedirectory-cherwood/" target="_blank" class="btn btn-ghost">GitHub Pages mirror</a>
-      </div>
-    </div>
-  </div>
-</section>
 <section id="legal">
   <div class="wrap">
     <div class="section-head">
@@ -505,6 +469,45 @@
         <a href="https://legal.tarunc.com" target="_blank" class="btn btn-primary">Live project site &#8594;</a>
         <a href="https://github.com/taruncherukurigit/suricata-siem-lite-lab" target="_blank" class="btn btn-ghost">Full GitHub repo</a>
         <a href="https://taruncherukurigit.github.io/suricata-siem-lite-lab/" target="_blank" class="btn btn-ghost">GitHub Pages mirror</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="foundation">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow-plain">Cherwood Corporation &middot; Client Engagement, Delivered by Network Solutions</span>
+      <h2>Cherwood Foundation &mdash; AD / 802.1X / SSL-VPN</h2>
+      <p>Active Directory, 802.1X wireless authentication, and RADIUS-backed SSL-VPN for a nonprofit client &mdash; replacing a shared Wi-Fi password and unmanaged local VPN accounts with one verified identity. Full writeup, code, and the real troubleshooting story in the <a href="https://github.com/taruncherukurigit/activedirectory-cherwood" target="_blank">GitHub repo</a>.</p>
+    </div>
+    <div class="featured">
+      <div class="tag-row">
+        <span class="mini-tag">Active Directory</span>
+        <span class="mini-tag">802.1X</span>
+        <span class="mini-tag">NPS / RADIUS</span>
+        <span class="mini-tag">SSL-VPN</span>
+        <span class="mini-tag">Group Policy</span>
+      </div>
+      <h3>One credential, verified at every door &mdash; Wi-Fi, VPN, and the desktop itself</h3>
+      <p>A new Active Directory domain with AD-integrated DNS and a real OU structure, an Enterprise CA issuing the certificate 802.1X requires, and NPS acting as RADIUS between the directory and two entirely different client devices &mdash; a Cisco access point and a FortiGate firewall &mdash; each with its own policy. Proven end-to-end: valid and invalid logins tested on both Wi-Fi and VPN, with server-side log evidence for each, plus a domain-joined client and an enforced Group Policy.</p>
+      <div class="inv-cat">The setup</div>
+      <table class="inv-table">
+        <tr><th>Component</th><th>Role</th></tr>
+        <tr><td><code>foundation.cherwood.local</code></td><td>AD domain &mdash; DC at 10.10.60.20</td></tr>
+        <tr><td><code>FOUNDATION-CLIENT01</code></td><td>Domain-joined client &mdash; 10.10.60.21</td></tr>
+        <tr><td>NPS / RADIUS</td><td>Two independent Network Policies &mdash; one for Wi-Fi, one for VPN</td></tr>
+      </table>
+      <div class="inv-cat">The real engineering story</div>
+      <table class="inv-table">
+        <tr><th>Bug</th><th>Root cause</th></tr>
+        <tr><td>DNS role silently missing after promotion</td><td>AD DS promotion should auto-install DNS; it didn't, despite the AD-integrated zone data existing correctly &mdash; installed the role manually, verified via live queries</td></tr>
+        <tr><td>A correctly-scoped Wi-Fi policy silently rejected every VPN login</td><td>The Network Policy's "Wireless" condition meant NPS skipped it entirely for VPN's "Virtual" connection type, with no second policy to catch the fallthrough &mdash; fixed with an independent VPN-scoped policy</td></tr>
+        <tr><td>A failure with no log entry at all</td><td>Mismatched RADIUS shared secret between the firewall and NPS &mdash; fails completely silently by design, since the packet can't be authenticated well enough to log; confirmed via a direct RADIUS test bypassing the VPN portal</td></tr>
+      </table>
+      <div class="hero-actions" style="margin-top:24px; margin-bottom: 0;">
+        <a href="https://foundation.tarunc.com" target="_blank" class="btn btn-primary">Live project site &#8594;</a>
+        <a href="https://github.com/taruncherukurigit/activedirectory-cherwood" target="_blank" class="btn btn-ghost">Full GitHub repo</a>
+        <a href="https://taruncherukurigit.github.io/activedirectory-cherwood/" target="_blank" class="btn btn-ghost">GitHub Pages mirror</a>
       </div>
     </div>
   </div>
@@ -611,6 +614,11 @@
         <span class="proj-status live">Delivered</span>
         <h4>AWS Cloud Foundations</h4>
         <p>Applied AWS core services (EC2, VPC, S3, IAM) through coursework tied to the Graduate Certificate in Cloud Engineering, covering cloud networking, security, and Linux-based virtualization.</p>
+      </div>
+      <div class="proj-card upcoming">
+        <span class="proj-status planned">Planned</span>
+        <h4>IDS/IPS Lab</h4>
+        <p>Suricata on a mirrored switch port &mdash; real detection and alert triage practice.</p>
       </div>
     </div>
   </div>
