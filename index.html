@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tarun Cherukuri — Network Engineer</title>
-<meta name="description" content="Tarun Cherukuri — Network Engineer, M.Eng Cybersecurity (University of Maryland). Enterprise infrastructure, wireless, security architecture. CCNA in progress.">
+<meta name="description" content="Tarun Cherukuri — Network Engineer, M.Eng Cybersecurity (University of Maryland). Lab projects on real FortiGate and Cisco hardware: segmentation, automation, HSRP, 802.1X, Suricata IDS and wireless surveys. CCNA in progress.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -130,12 +130,12 @@
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
-      <a href="#cherwood">Cherwood Health</a>
-      <a href="#netsol">Network Solutions</a>
-      <a href="#packetgeist">Packetgeist</a>
-      <a href="#financial">Cherwood Financial</a>
-      <a href="#foundation">Cherwood Foundation</a>
-      <a href="#legal">Cherwood Legal</a>
+      <a href="#cherwood">Segmented Network</a>
+      <a href="#netsol">Automation</a>
+      <a href="#financial">HSRP</a>
+      <a href="#foundation">AD / RADIUS</a>
+      <a href="#legal">Suricata IDS</a>
+      <a href="#packetgeist">Site Survey</a>
       <a href="#casebook">Packet Casebook</a>
       <a href="#certs">Certifications</a>
       <a href="https://github.com/taruncherukurigit" target="_blank">GitHub &#8599;</a>
@@ -147,23 +147,23 @@
   <div class="wrap">
     <span class="eyebrow"><span class="dot"></span> Open to opportunities</span>
     <h1 class="title">Tarun Cherukuri<br><span class="role">Network Engineer.</span></h1>
-    <p class="hero-sub">M.Eng in Cybersecurity from the University of Maryland (3.9 GPA), with hands-on experience supporting enterprise infrastructure for 120+ users on Cisco, Palo Alto, and Meraki equipment — plus a fully independent, real-hardware lab project built from the ground up. CCNA in progress.</p>
+    <p class="hero-sub">M.Eng in Cybersecurity from the University of Maryland (3.9 GPA). Maintained a Cisco and Ubiquiti teaching lab network (OSPF, BGP, dual-stack IPv4 and IPv6) as a Graduate Course Assistant and led sessions of a graduate networking course as a Graduate Teaching Assistant. Builds and documents lab networks on physical FortiGate and Cisco hardware, bugs included. CCNA in progress.</p>
     <div class="role-tags">
       <span class="role-tag">Network Engineer</span>
       <span class="role-tag">Network Analyst</span>
-      <span class="role-tag">Network Architect</span>
+      <span class="role-tag">NOC Engineer</span>
       <span class="role-tag">Wireless Engineer</span>
     </div>
     <div class="hero-actions">
-      <a href="#cherwood" class="btn btn-primary">View my hands-on lab project &#8594;</a>
+      <a href="#cherwood" class="btn btn-primary">View my lab projects &#8594;</a>
       <a href="mailto:taruncheru@gmail.com" class="btn btn-ghost">taruncheru@gmail.com</a>
       <a href="https://www.linkedin.com/in/dsstaruncherukuri" target="_blank" class="btn btn-ghost">LinkedIn &#8599;</a>
       <a href="https://github.com/taruncherukurigit" target="_blank" class="btn btn-ghost">GitHub &#8599;</a>
     </div>
     <div class="stat-row">
-      <div class="stat"><span class="num">2.8 yrs</span><span class="label">Hands-on infrastructure experience</span></div>
+      <div class="stat"><span class="num">7</span><span class="label">Documented lab projects on real hardware</span></div>
       <div class="stat"><span class="num">3.9</span><span class="label">GPA, M.Eng Cybersecurity</span></div>
-      <div class="stat"><span class="num">120+</span><span class="label">Users supported (UMD network)</span></div>
+      <div class="stat"><span class="num">~600</span><span class="label">Students supported (UMD networking courses)</span></div>
       <div class="stat"><span class="num">1</span><span class="label">Published patent (SAFE MFA device)</span></div>
     </div>
   </div>
@@ -175,38 +175,44 @@
       <h2>Experience</h2>
     </div>
     <div class="exp-item">
-      <div class="exp-when">Jul 2025 &ndash; May 2026</div>
+      <div class="exp-when">Sep 2025 &ndash; May 2026</div>
       <div class="exp-body">
-        <h4>Network Engineer &mdash; Graduate Assistantship</h4>
-        <span class="org">University of Maryland, College Park, MD</span>
+        <h4>Graduate Course Assistant &middot; Technologies, Infrastructure and Architecture (INST 346)</h4>
+        <span class="org">University of Maryland, College of Information</span>
         <ul>
-          <li>Supported design, documentation, and maintenance of network infrastructure serving 120+ users across multiple locations on enterprise-grade Cisco, Palo Alto, and Meraki equipment</li>
-          <li>Provided hands-on troubleshooting for connectivity and performance issues using Wireshark packet analysis and SolarWinds monitoring</li>
-          <li>Managed network projects including equipment upgrades and infrastructure improvements; researched enhancements for organizational-standards compliance</li>
-          <li>Performed scheduled maintenance and proactive optimization; participated in rotating on-call incident response</li>
+          <li>Maintained and troubleshot the IoT and Networking Lab network on Cisco and Ubiquiti equipment: EdgeRouter 4 and EdgeRouter X routers, UniFi PoE switches, a UniFi Dream Machine, Flex Mini switches and a Cloud Key controller</li>
+          <li>Maintained the lab's 43-page configuration guide covering OSPFv2 and OSPFv3, BGP, dual-stack IPv4 and IPv6, DHCP, DNS forwarding, VLANs, firewall rules and configuration backup and restore</li>
+          <li>Configured access points and firewall rules and ran Wi-Fi site surveys of the lab spaces</li>
+          <li>Administered the lab's TrueNAS server on a Dell PowerEdge R6515 and Docker containers for lab services, and built a Raspberry Pi video streaming server on the lab network</li>
+          <li>Negotiated the lab's upstream network capabilities with the UMD Division of Information Technology (DIT)</li>
+          <li>Wrote runbooks and handover playbooks for other TAs</li>
+          <li>Ran in-person labs covering LAN builds, a whole-class home router network, Cisco Packet Tracer routing and switching and Wireshark analysis of HTTP, FTP, Telnet, HTTPS and SSH</li>
+          <li>Prepared and repaired lab equipment in weekly scheduled maintenance blocks so 20+ lab environments started each week with working connectivity</li>
+          <li>Set up lab laptops, lab equipment and student and TA devices for lab network access. Supported nearly 600 students across Fall 2025 and Spring 2026</li>
         </ul>
       </div>
     </div>
     <div class="exp-item">
-      <div class="exp-when">Aug 2024 &ndash; Jun 2025</div>
+      <div class="exp-when">Sep 2025 &ndash; May 2026</div>
       <div class="exp-body">
-        <h4>Graduate Teaching Assistant &mdash; Networked Infrastructure</h4>
-        <span class="org">University of Maryland, College Park, MD</span>
+        <h4>Graduate Teaching Assistant &middot; Networked Infrastructure (INST 662)</h4>
+        <span class="org">University of Maryland, College of Information</span>
         <ul>
-          <li>Supported network design and maintenance across 20+ environments; hands-on troubleshooting with Wireshark and monitoring tools</li>
-          <li>Assisted with network projects and system upgrades applying Cisco, Palo Alto, and Meraki knowledge in a client-facing capacity</li>
+          <li>Led in-person graduate class sessions covering IP addressing, static, RIP and OSPF routing, LAMP server builds and network device hardening</li>
+          <li>Designed lab exercises and coursework. Prepared and coached hands-on labs, repaired lab equipment and ran lab-based office hours</li>
+          <li>Built grading rubrics, graded labs and Packet Tracer work and administered the course in Canvas</li>
         </ul>
       </div>
     </div>
     <div class="exp-item">
-      <div class="exp-when">Jun 2022 &ndash; Jun 2024</div>
+      <div class="exp-when">Dec 2023 &ndash; May 2024</div>
       <div class="exp-body">
-        <h4>Network Researcher</h4>
-        <span class="org">Geethanjali College of Engineering</span>
+        <h4>Student Researcher &middot; IoT and Network Security</h4>
+        <span class="org">Geethanjali College of Engineering and Technology</span>
         <ul>
-          <li>Supported network infrastructure design and maintenance; troubleshot connectivity and performance issues</li>
-          <li>Developed and published a patent for SAFE (Secure Access Fortification Enabler), a multi-factor authentication security device</li>
-        </ul>
+          <li>Designed SAFE (Secure Access Fortification Enabler), a multi-factor IoT access system that layers fingerprint biometrics, a keypad PIN and a Bluetooth code on an Arduino Mega 2560, with an ESP32-CAM that captures intrusion photos and sends them over Wi-Fi to cloud storage, plus HTTPS alerts through a self-hosted SMS gateway</li>
+          <li>Added a fail-safe lockout after three failed attempts plus an emergency access code, and prototyped the circuit in Proteus before the hardware build</li>
+                  </ul>
       </div>
     </div>
   </div>
@@ -249,7 +255,7 @@
       <div class="patent-icon">&#128196;</div>
       <div>
         <h4>Published Patent &mdash; SAFE (Secure Access Fortification Enabler)</h4>
-        <p>A multi-factor authentication security device, developed and published during network research work at Geethanjali College of Engineering.</p>
+        <p>A multi-factor IoT access system combining fingerprint, PIN and Bluetooth factors with ESP32-CAM intrusion capture, designed during student research at Geethanjali College of Engineering and Technology.</p>
       </div>
     </div>
   </div>
@@ -257,33 +263,33 @@
 <section id="skills">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow-plain">Applied professionally &amp; in the lab</span>
+      <span class="eyebrow-plain">Used at UMD and in my lab</span>
       <h2>Technical skills</h2>
     </div>
     <div class="skill-grid">
       <div class="skill-card">
-        <h4>Network Architecture &amp; Design</h4>
-        <ul><li>Enterprise topology design</li><li>Scalability &amp; HA planning</li><li>Segmentation &amp; boundary design</li><li>Compliance alignment</li></ul>
-      </div>
-      <div class="skill-card">
         <h4>Routing &amp; Switching</h4>
-        <ul><li>OSPF</li><li>BGP</li><li>RIPv2</li><li>Static routing</li><li>VLANs &amp; 802.1Q trunking</li><li>Port security / NAC</li></ul>
+        <ul><li>OSPFv2 and OSPFv3</li><li>BGP</li><li>RIPv2</li><li>HSRP</li><li>Static routing</li><li>VLANs &amp; 802.1Q trunking</li><li>Inter-VLAN routing</li><li>Spanning Tree</li><li>IPv4 and IPv6 dual stack</li><li>NAT, DHCP, DNS</li></ul>
       </div>
       <div class="skill-card">
         <h4>Firewalls &amp; Security</h4>
-        <ul><li>Palo Alto</li><li>Fortinet FortiGate</li><li>Meraki</li><li>VPN (SSL-VPN)</li><li>NAT</li><li>DNS filtering</li></ul>
+        <ul><li>Fortinet FortiGate</li><li>Firewall policy</li><li>Network segmentation &amp; DMZ</li><li>SSL-VPN</li><li>Suricata IDS &amp; custom rules</li><li>TLS cipher hardening</li><li>Device hardening</li></ul>
       </div>
       <div class="skill-card">
-        <h4>Monitoring &amp; Analysis</h4>
-        <ul><li>SolarWinds</li><li>Wireshark</li><li>Prometheus</li><li>Grafana</li><li>SNMP</li><li>NetFlow</li></ul>
+        <h4>Identity &amp; Access</h4>
+        <ul><li>Active Directory</li><li>Group Policy</li><li>NPS / RADIUS</li><li>802.1X</li><li>Enterprise CA &amp; PKI</li><li>Multi-factor authentication</li></ul>
       </div>
       <div class="skill-card">
         <h4>Wireless</h4>
-        <ul><li>Site surveys &amp; RF analysis</li><li>Cisco Autonomous APs</li><li>Meraki wireless</li><li>Ubiquiti UniFi</li><li>Coverage optimization</li></ul>
+        <ul><li>Passive site surveys</li><li>RF &amp; channel planning</li><li>Co-channel interference analysis</li><li>Cisco access points</li><li>Ubiquiti UniFi</li><li>NetSpot</li></ul>
+      </div>
+      <div class="skill-card">
+        <h4>Monitoring &amp; Operations</h4>
+        <ul><li>Wireshark packet analysis</li><li>Prometheus &amp; Grafana</li><li>SNMP</li><li>ServiceNow Incident &amp; Change</li><li>Config backup &amp; drift detection</li><li>Root cause analysis</li><li>Runbooks &amp; documentation</li></ul>
       </div>
       <div class="skill-card">
         <h4>Systems &amp; Automation</h4>
-        <ul><li>Proxmox VE</li><li>Linux (Debian)</li><li>Bash scripting</li><li>SSH key management</li><li>Cron automation</li></ul>
+        <ul><li>Python (Netmiko)</li><li>Bash</li><li>Git</li><li>Windows Server</li><li>Linux (Debian, LXC)</li><li>Docker, nginx, Caddy</li><li>Proxmox VE &amp; TrueNAS</li><li>AWS &amp; Google Cloud</li><li>Terraform &amp; CI/CD</li></ul>
       </div>
     </div>
   </div>
@@ -293,17 +299,16 @@
     <div class="section-head">
       <span class="eyebrow-plain">Selected work</span>
       <h2>Projects</h2>
-      <p>Three flagship builds below, all on real hardware end to end. Additional applied work
-      and what's next follow after.</p>
+      <p>Seven networking projects from my personal lab, plus automation work below, all on real hardware end to end. Each one links to its GitHub repo with build notes and a troubleshooting log.</p>
     </div>
   </div>
 </section>
 <section id="cherwood" style="padding-top:32px;">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow-plain">Independent lab project</span>
-      <h2>Cherwood Health</h2>
-      <p>A segmented enterprise network for a fictional healthcare organization &mdash; designed, built, and hardened end-to-end on real, physical Fortinet and Cisco hardware. Full command reference and troubleshooting log in the <a href="https://github.com/taruncherukurigit/cherwood-health" target="_blank">GitHub repo</a>.</p>
+      <span class="eyebrow-plain">Lab project &middot; Network design</span>
+      <h2>Segmented Enterprise Network</h2>
+      <p>A segmented enterprise network designed, built and hardened end to end on real, physical Fortinet and Cisco hardware. Full command reference and troubleshooting log in the <a href="https://github.com/taruncherukurigit/cherwood-health" target="_blank">GitHub repo</a>.</p>
     </div>
     <div class="featured">
       <div class="tag-row">
@@ -342,9 +347,7 @@
         <tr><td>Routing protocol</td><td>RIPv2</td></tr>
       </table>
       <div class="hero-actions" style="margin-top:24px; margin-bottom: 0;">
-        <a href="https://cherwood.tarunc.com" target="_blank" class="btn btn-primary">Live project site &#8594;</a>
-        <a href="https://github.com/taruncherukurigit/cherwood-health" target="_blank" class="btn btn-ghost">Full GitHub repo</a>
-        <a href="https://taruncherukurigit.github.io/cherwood-health/" target="_blank" class="btn btn-ghost">GitHub Pages mirror</a>
+        <a href="https://github.com/taruncherukurigit/cherwood-health" target="_blank" class="btn btn-primary">Full GitHub repo &#8594;</a>
       </div>
     </div>
   </div>
@@ -352,9 +355,9 @@
 <section id="netsol">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow-plain">Cherwood Corporation &middot; Division 03</span>
-      <h2>Cherwood Network Solutions</h2>
-      <p>The internal MSP division of Cherwood Corporation &mdash; building and operating the automation that manages, backs up, and secures every other Cherwood property, starting with Cherwood Health. Now extended into the ITSM process layer with a real ServiceNow integration. Full writeup, code, and the real troubleshooting story in the <a href="https://github.com/taruncherukurigit/network-automation-toolkit" target="_blank">GitHub repo</a>.</p>
+      <span class="eyebrow-plain">Lab project &middot; Automation</span>
+      <h2>Python Network Automation and ServiceNow</h2>
+      <p>Automation that backs up, version-controls and drift-checks every device in the lab, extended into the ITSM process layer with a real ServiceNow integration. Full writeup, code, and the real troubleshooting story in the <a href="https://github.com/taruncherukurigit/network-automation-toolkit" target="_blank">GitHub repo</a>.</p>
     </div>
     <div class="featured">
       <div class="tag-row">
@@ -367,7 +370,7 @@
         <span class="mini-tag">ServiceNow ITSM</span>
       </div>
       <h3>Root-caused a 12-year-old, still-open Paramiko/Cisco IOS bug</h3>
-      <p>An unattended nightly system that backs up, version-controls, drift-checks, and maps the topology of three production devices &mdash; zero manual steps, built the way a real MSP scopes access into a client's environment. Real config drift now also opens a ServiceNow Incident automatically, with severity mapped from the diff content, and the same pipeline was verified against a full ServiceNow Change Request lifecycle &mdash; the process half of network operations, not just detection.</p>
+      <p>An unattended nightly system that backs up, version-controls, drift-checks, and maps the topology of three lab devices with zero manual steps. Real config drift now also opens a ServiceNow Incident automatically, with severity mapped from the diff content, and the same pipeline was verified against a full ServiceNow Change Request lifecycle &mdash; the process half of network operations, not just detection.</p>
       <div class="inv-cat">What it manages</div>
       <table class="inv-table">
         <tr><th>Device</th><th>Role</th></tr>
@@ -385,11 +388,8 @@
         <tr><td>A form field that silently refused to change</td><td>ServiceNow's Normal Change model gates state transitions behind a real approval workflow and a required Assignment Group field, neither obvious from the form &mdash; fixed by working through genuine CAB-style approver records instead of fighting the state field</td></tr>
       </table>
       <div class="hero-actions" style="margin-top:24px; margin-bottom: 0;">
-        <a href="https://networksolutions.tarunc.com" target="_blank" class="btn btn-primary">Live project site &#8594;</a>
-        <a href="https://netmap.tarunc.com" target="_blank" class="btn btn-ghost">Live topology map</a>
         <a href="https://github.com/taruncherukurigit/network-automation-toolkit/blob/main/docs/SERVICENOW-INTEGRATION.md" target="_blank" class="btn btn-ghost">ServiceNow integration writeup</a>
-        <a href="https://github.com/taruncherukurigit/network-automation-toolkit" target="_blank" class="btn btn-ghost">Full GitHub repo</a>
-        <a href="https://taruncherukurigit.github.io/network-automation-toolkit/" target="_blank" class="btn btn-ghost">GitHub Pages mirror</a>
+        <a href="https://github.com/taruncherukurigit/network-automation-toolkit" target="_blank" class="btn btn-primary">Full GitHub repo &#8594;</a>
       </div>
     </div>
   </div>
@@ -397,9 +397,9 @@
 <section id="financial">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow-plain">Cherwood Corporation &middot; Division 05</span>
-      <h2>Cherwood Financial &mdash; HA/Failover Lab</h2>
-      <p>A real two-switch HSRP failover pair, proven against an actual power-pull rather than a config toggle &mdash; closing the one gap none of the other divisions cover: redundancy under real failure. Full writeup, code, and the real troubleshooting story in the <a href="https://github.com/taruncherukurigit/hsrp-failover-lab" target="_blank">GitHub repo</a>.</p>
+      <span class="eyebrow-plain">Lab project &middot; High availability</span>
+      <h2>HSRP High-Availability Lab</h2>
+      <p>A real two-switch HSRP failover pair, proven against an actual power-pull rather than a config toggle, testing redundancy under real failure. Full writeup, code, and the real troubleshooting story in the <a href="https://github.com/taruncherukurigit/hsrp-failover-lab" target="_blank">GitHub repo</a>.</p>
     </div>
     <div class="featured">
       <div class="tag-row">
@@ -409,7 +409,7 @@
         <span class="mini-tag">Live failure test</span>
         <span class="mini-tag">Firewall policy scoping</span>
       </div>
-      <h3>Measured a ~2 second failover against a real power-pull, not a spec sheet</h3>
+      <h3>Measured a 3.33-second failover against a real power-pull, from raw packet timestamps</h3>
       <p>Two physical Cisco 3560E switches share one virtual gateway IP on a dedicated VLAN, with explicit priorities, tuned timers, and Spanning Tree deliberately aligned to the same switch HSRP favors. Proven by actually cutting power on the active switch mid-ping and measuring what happened.</p>
       <div class="inv-cat">The setup</div>
       <table class="inv-table">
@@ -426,9 +426,7 @@
         <tr><td>New link showed a nonsense port label on the topology map</td><td>A 22-character hostname overflowed a fixed-width CLI column, causing the parser to misread the Hold-time value as a port name &mdash; silently wrong data, no error raised</td></tr>
       </table>
       <div class="hero-actions" style="margin-top:24px; margin-bottom: 0;">
-        <a href="https://failover.tarunc.com" target="_blank" class="btn btn-primary">Live project site &#8594;</a>
-        <a href="https://github.com/taruncherukurigit/hsrp-failover-lab" target="_blank" class="btn btn-ghost">Full GitHub repo</a>
-        <a href="https://taruncherukurigit.github.io/hsrp-failover-lab/" target="_blank" class="btn btn-ghost">GitHub Pages mirror</a>
+        <a href="https://github.com/taruncherukurigit/hsrp-failover-lab" target="_blank" class="btn btn-primary">Full GitHub repo &#8594;</a>
       </div>
     </div>
   </div>
@@ -436,8 +434,8 @@
 <section id="legal">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow-plain">Cherwood Corporation &middot; Division 04</span>
-      <h2>Cherwood Legal &mdash; SIEM-lite + IDS Lab</h2>
+      <span class="eyebrow-plain">Lab project &middot; Security monitoring</span>
+      <h2>Suricata IDS and SIEM-lite Dashboard</h2>
       <p>A passive intrusion-detection lab on real hardware &mdash; a dedicated VLAN, a live Suricata sensor running a real 52,713-signature ruleset, and two independently verified detections: a malware-signature transfer and a live port scan, both surfaced through a lightweight custom dashboard. Full writeup, code, and the real troubleshooting story in the <a href="https://github.com/taruncherukurigit/suricata-siem-lite-lab" target="_blank">GitHub repo</a>.</p>
     </div>
     <div class="featured">
@@ -448,7 +446,7 @@
         <span class="mini-tag">VLAN segmentation</span>
         <span class="mini-tag">Custom detection rules</span>
       </div>
-      <h3>Proved live detection, not just segmentation &mdash; the one gap none of the other divisions cover</h3>
+      <h3>Proved live detection, not just segmentation</h3>
       <p>A dedicated VLAN carries traffic through Proxmox's own VLAN-aware sub-bridge, watched directly by a Suricata sensor running the full Emerging Threats Open ruleset plus two custom rules. Proven against two real tests: a real malware-signature file transfer and a live port scan &mdash; both fired, both correctly attributed, both surfaced in a lightweight triage dashboard instead of raw log files.</p>
       <div class="inv-cat">The setup</div>
       <table class="inv-table">
@@ -465,9 +463,7 @@
         <tr><td>1,000-port scan completed with zero alerts fired</td><td>Emerging Threats Open ships no generic, low-threshold connection-rate rule tuned to a fast, small scan out of the box</td></tr>
       </table>
       <div class="hero-actions" style="margin-top:24px; margin-bottom: 0;">
-        <a href="https://legal.tarunc.com" target="_blank" class="btn btn-primary">Live project site &#8594;</a>
-        <a href="https://github.com/taruncherukurigit/suricata-siem-lite-lab" target="_blank" class="btn btn-ghost">Full GitHub repo</a>
-        <a href="https://taruncherukurigit.github.io/suricata-siem-lite-lab/" target="_blank" class="btn btn-ghost">GitHub Pages mirror</a>
+        <a href="https://github.com/taruncherukurigit/suricata-siem-lite-lab" target="_blank" class="btn btn-primary">Full GitHub repo &#8594;</a>
       </div>
     </div>
   </div>
@@ -475,9 +471,9 @@
 <section id="foundation">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow-plain">Cherwood Corporation &middot; Client Engagement, Delivered by Network Solutions</span>
-      <h2>Cherwood Foundation &mdash; AD / 802.1X / SSL-VPN</h2>
-      <p>Active Directory, 802.1X wireless authentication, and RADIUS-backed SSL-VPN for a nonprofit client &mdash; replacing a shared Wi-Fi password and unmanaged local VPN accounts with one verified identity. Full writeup, code, and the real troubleshooting story in the <a href="https://github.com/taruncherukurigit/activedirectory-cherwood" target="_blank">GitHub repo</a>.</p>
+      <span class="eyebrow-plain">Lab project &middot; Identity and access</span>
+      <h2>Active Directory, 802.1X and RADIUS</h2>
+      <p>Active Directory, 802.1X wireless authentication, and RADIUS-backed SSL-VPN in my lab, replacing a shared Wi-Fi password and unmanaged local VPN accounts with one verified identity. Full writeup, code, and the real troubleshooting story in the <a href="https://github.com/taruncherukurigit/activedirectory-cherwood" target="_blank">GitHub repo</a>.</p>
     </div>
     <div class="featured">
       <div class="tag-row">
@@ -504,9 +500,7 @@
         <tr><td>A failure with no log entry at all</td><td>Mismatched RADIUS shared secret between the firewall and NPS &mdash; fails completely silently by design, since the packet can't be authenticated well enough to log; confirmed via a direct RADIUS test bypassing the VPN portal</td></tr>
       </table>
       <div class="hero-actions" style="margin-top:24px; margin-bottom: 0;">
-        <a href="https://foundation.tarunc.com" target="_blank" class="btn btn-primary">Live project site &#8594;</a>
-        <a href="https://github.com/taruncherukurigit/activedirectory-cherwood" target="_blank" class="btn btn-ghost">Full GitHub repo</a>
-        <a href="https://taruncherukurigit.github.io/activedirectory-cherwood/" target="_blank" class="btn btn-ghost">GitHub Pages mirror</a>
+        <a href="https://github.com/taruncherukurigit/activedirectory-cherwood" target="_blank" class="btn btn-primary">Full GitHub repo &#8594;</a>
       </div>
     </div>
   </div>
@@ -514,9 +508,9 @@
 <section id="casebook">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow-plain">Cherwood Corporation &middot; Cross-Division Evidence</span>
+      <span class="eyebrow-plain">Lab project &middot; Packet analysis</span>
       <h2>Packet Capture Casebook</h2>
-      <p>Four real packet captures, each tied to a specific bug or design decision from Cherwood Health, HA/Failover, and Network Solutions &mdash; not a tutorial series, evidence that packets can actually be read, not just described. Full writeup, raw captures, and screenshots in the <a href="https://github.com/taruncherukurigit/packet-capture-casebook" target="_blank">GitHub repo</a>.</p>
+      <p>Four real packet captures, each tied to a specific bug or design decision from the segmented network, HSRP and automation projects &mdash; not a tutorial series, evidence that packets can actually be read, not just described. Full writeup, raw captures, and screenshots in the <a href="https://github.com/taruncherukurigit/packet-capture-casebook" target="_blank">GitHub repo</a>.</p>
     </div>
     <div class="featured">
       <div class="tag-row">
@@ -552,8 +546,8 @@
 <section id="packetgeist">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow-plain">Cherwood Corporation &middot; Division 02</span>
-      <h2>Packetgeist</h2>
+      <span class="eyebrow-plain">Lab project &middot; Wireless</span>
+      <h2>Wireless Site Survey, Plainsboro Public Library</h2>
       <p>A passive 802.11 site survey of the Plainsboro Public Library &mdash; a three-storey,
       46,500 sq&nbsp;ft public building &mdash; conducted with permission. Full RF analysis
       extracted directly from the survey database rather than read off a heatmap. Full write-up,
@@ -565,7 +559,7 @@
         <span class="mini-tag">NetSpot Android</span>
         <span class="mini-tag">SQLite extraction</span>
         <span class="mini-tag">Channel planning</span>
-        <span class="mini-tag">Predictive model</span>
+        <span class="mini-tag">Remediation plan</span>
       </div>
       <h3>The WiFi was fine. That was the finding.</h3>
       <p>Every measured location met the &minus;67&nbsp;dBm design threshold &mdash; no dead
@@ -589,9 +583,7 @@
         <tr><td>F-05</td><td>Medium</td><td>Coverage propagates freely between floors through the central atrium</td></tr>
       </table>
       <div class="hero-actions" style="margin-top:24px; margin-bottom: 0;">
-        <a href="https://packetgeist.tarunc.com" target="_blank" class="btn btn-primary">Live project site &#8594;</a>
-        <a href="https://github.com/taruncherukurigit/plainsboro-library-survey" target="_blank" class="btn btn-ghost">Full GitHub repo</a>
-        <a href="https://taruncherukurigit.github.io/plainsboro-library-survey/" target="_blank" class="btn btn-ghost">GitHub Pages mirror</a>
+        <a href="https://github.com/taruncherukurigit/plainsboro-library-survey" target="_blank" class="btn btn-primary">Full GitHub repo &#8594;</a>
       </div>
     </div>
   </div>
@@ -601,23 +593,19 @@
     <div class="section-head">
       <span class="eyebrow-plain">Also</span>
       <h2>Other work</h2>
-      <p>Applied infrastructure and cloud work from the UMD assistantship, plus what's next in the lab.</p>
+      <p>Coursework and ongoing work in the lab.</p>
     </div>
     <div class="proj-grid">
       <div class="proj-card">
-        <span class="proj-status live">Delivered</span>
-        <h4>Enterprise Network Infrastructure &amp; Architecture</h4>
-        <p>Designed and deployed network infrastructure using Cisco routers/switches, Palo Alto firewalls, and Meraki access points for 120+ users. Implemented segmentation and security zones; optimized performance with OSPF routing and QoS policies; used Wireshark to identify and resolve latency issues.</p>
+        <span class="proj-status live">Ongoing</span>
+        <h4>Self-Hosted Automation Pipelines</h4>
+        <p>A Kindle digest pipeline that pulls 18 categories of RSS articles from FreshRSS, ranks them through n8n and a Flask receiver, renders an EPUB with pandoc and emails it twice a day. A companion Docker Compose stack (FreshRSS, n8n, ntfy) pushes digests to a phone over Tailscale. Runs on 6+ Debian LXC containers on Proxmox with nginx and Caddy behind Cloudflare Tunnel.</p>
+        <p><a href="https://github.com/taruncherukurigit/kindle-daily-digest" target="_blank">kindle-daily-digest &#8599;</a> &middot; <a href="https://github.com/taruncherukurigit/homelab-rss-digest-pipeline" target="_blank">homelab-rss-digest-pipeline &#8599;</a></p>
       </div>
       <div class="proj-card">
-        <span class="proj-status live">Delivered</span>
-        <h4>AWS Cloud Foundations</h4>
-        <p>Applied AWS core services (EC2, VPC, S3, IAM) through coursework tied to the Graduate Certificate in Cloud Engineering, covering cloud networking, security, and Linux-based virtualization.</p>
-      </div>
-      <div class="proj-card upcoming">
-        <span class="proj-status planned">Planned</span>
-        <h4>IDS/IPS Lab</h4>
-        <p>Suricata on a mirrored switch port &mdash; real detection and alert triage practice.</p>
+        <span class="proj-status live">Coursework</span>
+        <h4>Cloud Engineering</h4>
+        <p>Graduate Certificate in Cloud Engineering coursework covering AWS, Google Cloud, Terraform and CI/CD pipelines, cloud networking and Linux virtualization.</p>
       </div>
     </div>
   </div>
@@ -626,7 +614,7 @@
   <div class="wrap">
     <div class="contact-panel">
       <h3>Let's talk.</h3>
-      <p>Open to Network Engineer, Network Analyst, Network Architect, and Wireless Engineer roles.</p>
+      <p>Open to Network Engineer, NOC, Network Analyst and Wireless Engineer roles.</p>
       <div class="contact-row">
         <a href="mailto:taruncheru@gmail.com" class="btn btn-primary">taruncheru@gmail.com</a>
           <a href="https://www.linkedin.com/in/dsstaruncherukuri" target="_blank" class="btn btn-ghost">LinkedIn &#8599;</a>
@@ -637,15 +625,7 @@
 </section>
 <footer>
   <div class="wrap">
-    Tarun Cherukuri &mdash; Network Engineering Portfolio. Flagship projects:
-    <a href="#cherwood">Cherwood Health</a>, <a href="#netsol">Network Solutions</a>, <a href="#packetgeist">Packetgeist</a>,
-      <a href="#financial">Cherwood Financial</a>, <a href="#foundation">Cherwood Foundation</a>, <a href="#legal">Cherwood Legal</a>, &amp;
-      <a href="#casebook">Packet Capture Casebook</a>.
-    <br>
-    <span style="font-size:11px;color:var(--text-faint)">
-      Viewing on <a href="https://tarunc.com" style="color:var(--text-faint)">tarunc.com</a> &middot;
-      also mirrored at <a href="https://taruncherukurigit.github.io/portfolio-page/" style="color:var(--text-faint)">GitHub Pages</a>
-    </span>
+    Tarun Cherukuri &middot; Network Engineering Portfolio &middot; <a href="https://github.com/taruncherukurigit">github.com/taruncherukurigit</a>
   </div>
 </footer>
 </body>
