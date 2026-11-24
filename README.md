@@ -1,8 +1,8 @@
-# Tarun Cherukuri · Network Engineering Portfolio
+# Tarun Cherukuri · IT Support and Network Engineering Portfolio
 
 **View it:** [taruncherukurigit.github.io/portfolio-page](https://taruncherukurigit.github.io/portfolio-page/)
 
-M.Eng in Cybersecurity (University of Maryland, 3.9 GPA). Graduate Course Assistant and Graduate Teaching Assistant for UMD networking courses. CompTIA Network+ and Security+, AWS Certified Cloud Practitioner, CCNA in progress. This site is the front door to seven projects from my personal lab, all built on real hardware rather than a simulator.
+IT Administrator at Resilience, Inc. M.Eng in Cybersecurity (University of Maryland, 3.9 GPA). Graduate Course Assistant and Graduate Teaching Assistant for UMD networking courses. CompTIA Network+ and Security+, AWS Certified Cloud Practitioner, CCNA in progress. This site is the front door to seven projects from my personal lab, all built on real hardware rather than a simulator.
 
 ## Projects
 
